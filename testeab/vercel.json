@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "highlander.py",
+            "src": "testeab/highlander.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "(.*)",
-            "dest": "highlander.py"
+            "dest": "testeab/highlander.py"
         }
     ]
 }
