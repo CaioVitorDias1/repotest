@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
         {
-            "src": "src/index.js",
-            "use": "@vercel/node"
+            "src": "highlander.py",
+            "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "(.*)",
-            "dest": "src/index.js"
+            "dest": "highlander.py"
         }
     ]
 }
