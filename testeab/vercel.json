@@ -7,8 +7,10 @@
         }
     ],
     "routes": [
+        
+        { "handle": "filesystem" },
         {
-            "src": "(.*)",
+            "src": "/.*",
             "dest": "testeab/highlander.py"
         }
     ]
