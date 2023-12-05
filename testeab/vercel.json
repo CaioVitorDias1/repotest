@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "testeab/highlander.py",
+            "src": "highlander.py",
             "use": "@vercel/python"
         }
     ],
@@ -11,7 +11,7 @@
         { "handle": "filesystem" },
         {
             "src": "/.*",
-            "dest": "testeab/highlander.py"
+            "dest": "highlander.py"
         }
     ]
 }
