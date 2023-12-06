@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, abort, redirect, url_for
 import mysql.connector
 
 app = Flask(__name__)
+app.run(port=80)
 
 # Configuração do banco de dados
 db_config = {
