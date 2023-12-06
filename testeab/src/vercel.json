@@ -3,9 +3,23 @@
     "builds": [
         {
             "src": "./highlander.py",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "2gb" },
+    "functions": {
+      "api": {
+        "runtime": "python3.8",
+        "includeFiles": ["requirements.txt"],
+        "memory": 1024
+      }
+    },
+    "build": {
+      "publish": ".",
+      "functions": "."
+    }
         }
     ],
+
+    
     "routes": [
         { "handle": "filesystem" },
         {
@@ -13,16 +27,5 @@
             "dest": "/"
         }
     
-    ],
-    "env": {
-      "FLASK_ENV": "production",
-      "FLASK_APP": "./highlander.py" 
-    },
-    "functions": {
-      "api": {
-        "runtime": "python3.8",
-        "includeFiles": ["requirements.txt"],
-        "memory": 1024
-      }
-    }
+    ]
 }
