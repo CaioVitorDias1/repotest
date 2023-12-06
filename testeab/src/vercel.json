@@ -6,8 +6,12 @@
             "use": "@vercel/python"
         }
     ],
+    "routes": [
+        { "handle": "filesystem" },
+        {
+            "src": "/",
+            "dest": "/"
+        }
     
-    "rewrites": [
-        {"source": "/(.*)", "destination": "/api/app"}
     ]
 }
