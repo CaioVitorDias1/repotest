@@ -82,13 +82,13 @@ def listar_usuarios():
             connection.close()
 
 # Criar a tabela (se não existir)
-criar_tabela()
+#criar_tabela()
 
 # Opção do usuário
-opcao = input('Deseja adicionar um novo email? (sim/não) ')
+#opcao = input('Deseja adicionar um novo email? (sim/não) ')
 
-if opcao.lower() == 'sim':
-    criar_usuario()
-else:
-    listar_usuarios()
+#if opcao.lower() == 'sim':
+#    criar_usuario()
+#else:
+#    listar_usuarios()
 
