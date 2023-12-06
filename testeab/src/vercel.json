@@ -3,27 +3,13 @@
     "builds": [
         {
             "src": "./highlander.py",
-            "use": "@vercel/python",
-            "config": { "maxLambdaSize": "2gb" },
-    "functions": {
-      "api": {
-        "runtime": "python3.8",
-        "includeFiles": ["requirements.txt"],
-        "memory": 1024
-      }
-    },
-    "build": {
-      "publish": ".",
-      "functions": "."
-    }
+            "use": "@vercel/python"
         }
     ],
-
-    
     "routes": [
         { "handle": "filesystem" },
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "/"
         }
     
