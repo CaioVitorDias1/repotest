@@ -22,8 +22,7 @@
     "functions": {
       "api": {
         "runtime": "python3.8",
-        "includeFiles": ["requirements.txt"],
-        "memory": 1024
+        "includeFiles": ["requirements.txt"]
       }
     }
 }
