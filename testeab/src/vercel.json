@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "./highlander.py",
+            "src": "./app.py",
             "use": "@vercel/python"
         }
     ],
@@ -10,7 +10,7 @@
         { "handle": "filesystem" },
         {
             "src": "/",
-            "dest": "./highlander.py"
+            "dest": "/"
         }
     
     ]
