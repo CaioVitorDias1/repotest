@@ -3,16 +3,20 @@
     "builds": [
         {
             "src": "./highlander.py",
-            "use": "@vercel/python"
+            "use": "@now/python"
         }
     ],
     "routes": [
         
         { "handle": "filesystem" },
         {
-            "src": "/",
+            "src": "/(.*)",
             "dest": "/"
         }
     
-    ]
+    ],
+    "env": {
+      "FLASK_ENV": "production",
+      "FLASK_APP": "./highlander.py"  
+    }
 }
