@@ -18,5 +18,12 @@
     "env": {
       "FLASK_ENV": "production",
       "FLASK_APP": "./highlander.py"  
+    },
+    "functions": {
+      "api": {
+        "runtime": "python3.8",
+        "includeFiles": ["requirements.txt"],
+        "memory": 1024
+      }
     }
 }
