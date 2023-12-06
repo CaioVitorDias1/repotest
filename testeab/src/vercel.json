@@ -13,5 +13,9 @@
             "dest": "/"
         }
     
-    ]
+    ],
+    "env": {
+      "FLASK_ENV": "production",
+      "FLASK_APP": "./highlander.py" 
+    }
 }
