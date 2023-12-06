@@ -5,17 +5,17 @@ app = Flask(__name__)
 # app.run(port=80)
 
 # Configuração do banco de dados
-db_config = {
-    'user': 'testepy',
-    'password': 'testepy',
-    'host': 'localhost',
-    'database': 'metrica_AB',
-    'raise_on_warnings': True
-}
+#db_config = {
+#    'user': 'testepy',
+#    'password': 'testepy',
+#    'host': 'localhost',
+#    'database': 'metrica_AB',
+#    'raise_on_warnings': True
+#}
 
 # Conectar ao banco de dados
-db_conn = mysql.connector.connect(**db_config)
-cursor = db_conn.cursor()
+#db_conn = mysql.connector.connect(**db_config)
+#cursor = db_conn.cursor()
 
 # Rota da página inicial
 @app.route('/')
@@ -29,26 +29,26 @@ def registrar_clique():
 
     # Verificar se o e-mail está cadastrado
     check_email_query = "SELECT email, teste FROM usuario WHERE email = %s"
-    cursor.execute(check_email_query, (email,))
-    user_data = cursor.fetchone()
+    #cursor.execute(check_email_query, (email,))
+    #user_data = cursor.fetchone()
 
-    if not user_data:
-        abort(404)  # Retornar um erro 404 se o e-mail não estiver cadastrado
+    #if not user_data:
+    #    abort(404)  # Retornar um erro 404 se o e-mail não estiver cadastrado
 
-    email, teste = user_data
+    #email, teste = user_data
 
     # Atualizar a coluna 'colocou_email' para 1
     update_query = "UPDATE usuario SET colocou_email = 1 WHERE email = %s"
-    cursor.execute(update_query, (email,))
-    db_conn.commit()
+    #cursor.execute(update_query, (email,))
+    #db_conn.commit()
 
     # Redirecionar com base no valor do campo 'teste'
-    if teste == 'A':
-        return redirect(url_for('pagina_a', email=email))
-    elif teste == 'B':
-        return redirect(url_for('pagina_b', email=email))
-    else:
-        abort(404)  # Redirecionar para página de erro se o valor de 'teste' não for 'A' nem 'B'
+    # if teste == 'A':
+    #     return redirect(url_for('pagina_a', email=email))
+    # elif teste == 'B':
+    #     return redirect(url_for('pagina_b', email=email))
+    # else:
+    #     abort(404)  # Redirecionar para página de erro se o valor de 'teste' não for 'A' nem 'B'
 
 
 def verificar_tipo_usuario(email, tipo_esperado):
